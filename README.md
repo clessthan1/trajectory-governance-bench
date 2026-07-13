@@ -65,3 +65,17 @@ CRA(C팔) 자체는 비공개 제품이라 이 패키지로 재실행할 수 없
 - 자체 설계 무대다(측정 축을 우리가 정의). 완화: 사전등록·결정적 채점·원본 전문 공개·이 패키지.
 - 합성 시나리오·한 모델(gpt-4o-mini)·단일 세션 시간축. 실사용 검증은 별도 트랙.
 - 주장 범위: **"이 거버넌스 행동들은 검색만으로는 안 나온다"** — "더 좋은 챗봇"이라는 주장이 아니다(회상 축은 RAG와 동급이 우리 결과다).
+
+
+## Hosted alpha — decision-governance API
+
+The governance layer measured by this benchmark also runs as a small hosted API:
+`POST /v1/note` returns `revisions_to_review` when the premises of your past decisions
+change; `POST /v1/recall` answers only from recorded evidence. A thin adapter for
+Graphiti/Zep backends was validated in a preregistered pilot (0.917 vs 0.333, 0 false
+positives on noise — synthetic 12 chains; portability proof, not a "better than Zep" claim).
+
+We're handing out a few **free alpha keys** to agent developers (rate-limited: 30 req/min,
+300 req/day — a learning alpha, not a service).
+**Request a key**: [open an issue with the alpha template](../../issues/new?template=alpha-key-request.md).
+Marker lexicon currently covers Korean and English.
